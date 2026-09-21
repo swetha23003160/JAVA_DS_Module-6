@@ -1,55 +1,70 @@
-# Ex3
-## Write a program to count the number of digits in an integer.
+# Ex4 
+## You are given a Java program that performs matrix addition. If Matrix A has all odd numbers and Matrix B has all even numbers of the same dimension, what will be the nature (even/odd/mixed) of the resulting matrix?
 ## DATE: 16-09-2026
 ## AIM:
-To write a Java program to count the number of digits in an integer.
+To write a java function to evaluate weather the given Matrix A has all odd numbers and Matrix B has all even numbers of the same dimension and find the nature of resultant matrrix.
 
 ## Algorithm
 1. Start the program.
-2. Declare an integer variable n and count = 0.
-3. Read the integer number n from the user.
-4. If n is 0, then the count of digits is 1.
-5. Otherwise, Repeat the steps while n is not equal to 0. Divide n by 10. Increment count by 1.
-6. Display the value of count.
-7. Stop the program.
-
+2. Declare two 2D arrays, A and B, of the same size.
+3. Initialize Matrix A with all odd numbers and Matrix B with all even numbers.
+4. Create another 2D array C to store the sum of corresponding elements of A and B.
+5. For each element position (i, j): `Compute C[i][j] = A[i][j] + B[i][j].`
+   
 ## Program:
 ```java
 /*
-Program to to count the number of digits in an integer
+Program to find the nature of resultant matrix.
 Developed by: SWETHA M
 Register Number: 212223040223
 */
 
-import java.util.Scanner;
-
-public class CountDigits {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int num, count = 0;
-
-        System.out.print("Enter an integer: ");
-        num = sc.nextInt();
-
-        if (num == 0) {
-            count = 1;
-        } else {
-            while (num != 0) {
-                num = num / 10;
-                count++;
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+    
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int[][] row=new int[a][b];
+        int[][] col=new int[a][b];
+        int[][] res=new int[a][b];
+        for(int i=0;i<a;i++){
+            for(int j=0;j<b;j++){
+                row[i][j]=sc.nextInt();
             }
         }
-
-        System.out.println("Number of digits: " + count);
-        sc.close();
+    
+        for(int i=0;i<a;i++){
+            for(int j=0;j<b;j++){
+                col[i][j]=sc.nextInt();
+            }
+        }
+    
+        for(int i=0;i<a;i++){
+            for(int j=0;j<b;j++){
+                res[i][j]=row[i][j]+col[i][j];
+            }
+        }
+    
+        for(int i=0;i<a;i++){
+            for(int j=0;j<b;j++){
+                System.out.print(res[i][j]);
+                if(j<b-1){
+                    System.out.print(" ");
+                }
+            
+            }
+            System.out.println();
+        }
     }
 }
 ```
 
 ## Output:
-<img width="543" height="180" alt="image" src="https://github.com/user-attachments/assets/2e4cd75f-cb9c-461e-a79c-e7dec98ff288" />
+<img width="374" height="546" alt="image" src="https://github.com/user-attachments/assets/6f43e89f-7342-4e0d-aefe-68099b7b7546" />
 
 
 
 ## Result:
-Thus, the Java program to to count the number of digits in an integer is implemented successfully.
+Thus, the java program to evaluate weather the given Matrix A has all odd numbers and Matrix B has all even numbers of the same dimension and find the nature of resultant matrrix is implemented successfully.
